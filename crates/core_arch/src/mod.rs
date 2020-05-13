@@ -115,6 +115,16 @@ pub mod arch {
     pub mod nvptx {
         pub use crate::core_arch::nvptx::*;
     }
+
+    /// Platform-specific intrinsics for the `DPU` platform.
+    ///
+    /// See the [module documentation](../index.html) for more details.
+    #[cfg(any(target_arch = "dpu", dox))]
+    #[doc(cfg(target_arch = "dpu"))]
+    #[unstable(feature = "stdsimd", issue = "27731")]
+    pub mod dpu {
+        pub use crate::core_arch::dpu::*;
+    }
 }
 
 mod simd_llvm;
@@ -152,3 +162,7 @@ mod powerpc64;
 #[cfg(any(target_arch = "nvptx", target_arch = "nvptx64", dox))]
 #[doc(cfg(any(target_arch = "nvptx", target_arch = "nvptx64")))]
 mod nvptx;
+
+#[cfg(any(target_arch = "dpu", dox))]
+#[doc(cfg(target_arch = "dpu"))]
+mod dpu;
