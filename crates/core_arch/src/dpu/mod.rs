@@ -6,6 +6,6 @@ extern "C" {
 }
 
 #[inline]
-pub unsafe fn thead_id() -> i32 {
+pub unsafe fn thread_id() -> i32 {
     llvm_thread_id()
 }
