@@ -162,3 +162,7 @@ mod powerpc64;
 #[cfg(any(target_arch = "nvptx", target_arch = "nvptx64", dox))]
 #[doc(cfg(any(target_arch = "nvptx", target_arch = "nvptx64")))]
 mod nvptx;
+
+#[cfg(any(target_arch = "dpu", dox))]
+#[doc(cfg(target_arch = "dpu"))]
+mod dpu;
